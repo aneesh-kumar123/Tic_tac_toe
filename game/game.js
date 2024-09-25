@@ -45,10 +45,13 @@ class Game {
       let currentPlayer = this.players[this.turn % 2];
       let currentPlayerSymlbol = currentPlayer.getSymbol();
       this.board.markCell(cellNo, currentPlayerSymlbol);
+      console.log("now the turn of "+currentPlayer.getName())
      console.log(this.board.displayBoard())
 
       // checkWinner(this.board)
       this.turn++;
+      //now print the player turn
+      
 
       //now check winner if turn >=5
       if (this.turn >= 5) {
@@ -69,6 +72,13 @@ class Game {
     catch (error) {
       console.log(error)
     }
+  }
+
+  //reset the match
+  resetGame() {
+    this.board.resetBoard();
+    this.turn = 0;
+    console.log("match got reset")
   }
 
 

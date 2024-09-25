@@ -28,6 +28,11 @@ class Cell {
     this.symbol = symbol
 
   }
+
+  resetCell()
+  {
+    this.symbol = 'E'
+  }
 }
 
 module.exports = Cell;
