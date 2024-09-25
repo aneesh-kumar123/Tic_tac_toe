@@ -2,6 +2,7 @@ const Game=require('./game/game.js')
 let g1=Game.newGame("aneesh","manish")
 
 
+
 g1.playGame(4);
 g1.playGame(2);
 g1.playGame(1);

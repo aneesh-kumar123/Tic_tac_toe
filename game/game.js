@@ -45,6 +45,7 @@ class Game {
       let currentPlayer = this.players[this.turn % 2];
       let currentPlayerSymlbol = currentPlayer.getSymbol();
       this.board.markCell(cellNo, currentPlayerSymlbol);
+     console.log(this.board.displayBoard())
 
       // checkWinner(this.board)
       this.turn++;

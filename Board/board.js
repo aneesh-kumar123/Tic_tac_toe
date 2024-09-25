@@ -1,5 +1,4 @@
-//create one class name Board and in costructor it take cells of array 9 length
-//import that cells
+
 const Cell=require('../cells/cells.js')
 class Board {
   constructor(cells) {
@@ -18,6 +17,25 @@ class Board {
 
     
   }
+  //display board in pattern wise like | |
+  displayBoard() {
+    let board = ''
+    for (let i = 0; i < 9; i++) {
+      board += this.cells[i].getSymbol()
+      if ((i + 1) % 3 === 0) {
+        board += '\n'
+      } else {
+        board += ' | '
+      }
+    }
+    return board
+  }
+  
+
+
+
+    
+
 
   validateCellNo(cellNo)
   {

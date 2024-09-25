@@ -15,6 +15,9 @@ class Cell {
   }
 
 
+
+
+
   // function to checkisempty
   isEmpty() {
     return this.symbol === 'E';
