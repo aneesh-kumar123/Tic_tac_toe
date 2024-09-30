@@ -11,7 +11,7 @@ class Cell {
     return this.symbol;
   }
   static newCells() {
-    return new Cell('E');
+    return new Cell("E");
   }
 
 
@@ -20,7 +20,7 @@ class Cell {
 
   // function to checkisempty
   isEmpty() {
-    return this.symbol === 'E';
+    return this.symbol ==="E";
   }
 
   markPlayerSymbol(symbol)
@@ -31,7 +31,7 @@ class Cell {
 
   resetCell()
   {
-    this.symbol = 'E'
+    this.symbol = "E"
   }
 }
 

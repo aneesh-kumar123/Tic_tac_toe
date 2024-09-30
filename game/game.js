@@ -2,11 +2,14 @@
 const Board = require('../Board/board.js')
 const Player = require('../Player/player.js')
 class Game {
+  
  
   constructor(players, board, turn) {
     this.players = players
     this.board = board
     this.turn = turn
+    this.isActiva = false
+    this.status
   }
 
 
@@ -40,6 +43,16 @@ class Game {
   playGame(cellNo) {
     try {
       //validate cellno
+      if(this.isActiva==true)
+      {
+        
+        // throw new Error("Game is already end")
+        //return the status of the match
+        console.log(this.status)
+        return
+        
+
+      }
       this.board.validateCellNo(cellNo);
       this.board.isCellEmpty(cellNo);
       let currentPlayer = this.players[this.turn % 2];
@@ -57,12 +70,19 @@ class Game {
       if (this.turn >= 5) {
         if (this.board.checkWinner()) {
           //console cureent player is winner
+          this.isActiva=true
           console.log(currentPlayer.getName() + " is winner")
+          // this.status.push(currentPlayer.getName() + " is winner")
+          this.status=currentPlayer.getName() + " is winner already restart again"
+       
           return
 
         }
         else if (this.turn === 9) {
           console.log("Match Draw")
+          this.isActiva=true
+          // this.status.push("match already draw")
+          this.status="match is already Draw"
           return
         }
 
@@ -79,6 +99,7 @@ class Game {
     this.board.resetBoard();
     this.turn = 0;
     console.log("match got reset")
+    this.board.displayBoard();
   }
 
 
